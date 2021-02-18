@@ -1,5 +1,5 @@
-import { UserEntity } from "src/Modules/auth/user.entity";
-import { BlogEntity } from "src/Modules/blogs/blog.entity";
+import { UserEntity } from "src/modules/auth/user.entity";
+import { BlogEntity } from "src/modules/blogs/blog.entity";
 import { BaseEntity, BeforeInsert, Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()

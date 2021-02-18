@@ -1,6 +1,4 @@
 import { Injectable } from '@nestjs/common';
-import { from, Observable } from 'rxjs';
-import { switchMap, map } from 'rxjs/operators'
 import axios from 'axios';
 import { Forex } from './forex.interface';
 let cheerio: any = require ('cheerio');

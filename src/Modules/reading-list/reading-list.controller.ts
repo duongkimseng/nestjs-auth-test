@@ -1,8 +1,18 @@
-import { Controller, Get, Post, Body, Put, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Put,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { ReadingListService } from './reading-list.service';
 import { CreateReadingListDto } from './dto/create-reading-list.dto';
 import { UpdateReadingListDto } from './dto/update-reading-list.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('reading-list')
 @Controller('reading-list')
 export class ReadingListController {
   constructor(private readonly readingListService: ReadingListService) {}
@@ -23,7 +33,10 @@ export class ReadingListController {
   }
 
   @Put(':id')
-  update(@Param('id') id: string, @Body() updateReadingListDto: UpdateReadingListDto) {
+  update(
+    @Param('id') id: string,
+    @Body() updateReadingListDto: UpdateReadingListDto,
+  ) {
     return this.readingListService.update(+id, updateReadingListDto);
   }
 

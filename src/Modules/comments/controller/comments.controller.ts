@@ -2,7 +2,9 @@ import { Controller, Get, Post, Body, Put, Param, Delete, Req, Res } from '@nest
 import { CommentsService } from '../services/comments.service';
 import { CreateCommentDto } from '../models/dto/create-comment.dto';
 import { UpdateCommentDto } from '../models/dto/update-comment.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('comments')
 @Controller('comments')
 export class CommentsController {
   constructor(private readonly commentsService: CommentsService) {}

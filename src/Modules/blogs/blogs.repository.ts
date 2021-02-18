@@ -1,8 +1,8 @@
 import { NotFoundException } from "@nestjs/common";
-import { EntityRepository, Repository, TreeRepository } from "typeorm";
+import { EntityRepository, Repository } from "typeorm";
 import { BlogDto } from "./dto/blog.dto";
 import { BlogEntity } from "./blog.entity";
-import { UserEntity } from "src/Modules/auth/user.entity";
+import { UserEntity } from "src/modules/auth/user.entity";
 
 @EntityRepository(BlogEntity)
 export class BlogsRepository extends Repository<BlogEntity>{

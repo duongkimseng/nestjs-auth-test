@@ -15,5 +15,5 @@
   },
   "include": [
     "src/**/*.ts"
-  ]
+, "src/modules/comments/services/comments.service.spec"  ]
 }

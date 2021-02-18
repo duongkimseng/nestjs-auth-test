@@ -2,12 +2,12 @@ import { Body, Controller, Delete, Get, Param, ParseIntPipe, Patch, Post, Put, U
 import { BlogDto } from './dto/blog.dto';
 import { BlogEntity } from './blog.entity';
 import { BlogsService } from './blogs.service';
-import { GetUser } from 'src/Modules/auth/get-user.decorator';
-import { UserEntity } from 'src/Modules/auth/user.entity';
+import { GetUser } from 'src/modules/auth/get-user.decorator';
+import { UserEntity } from 'src/modules/auth/user.entity';
 import { AuthGuard } from '@nestjs/passport';
-import { Observable, from } from 'rxjs';
-import { ReadingListEntity } from '../reading-list/entities/reading-list.entity';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('blogs')
 @Controller('blogs')
 export class BlogsController {
     constructor(private readonly blogsService: BlogsService){}

@@ -1,30 +1,28 @@
 import { Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { AuthModule } from './Modules/auth/auth.module';
-import { BlogsModule } from './Modules/blogs/blogs.module';
-import { ReadingListModule } from './Modules/reading-list/reading-list.module';
-import { CommentsModule } from './Modules/comments/comments.module';
+import { AuthModule } from './modules/auth/auth.module';
+import { BlogsModule } from './modules/blogs/blogs.module';
+import { ReadingListModule } from './modules/reading-list/reading-list.module';
+import { CommentsModule } from './modules/comments/comments.module';
 import { WebscraperModule } from './modules/webscraper/webscraper.module';
+import { ListModule } from './modules/list/list.module';
+import { TypeormConfigModule } from '../config/database/typeorm.module';
+import { ConfigModule } from '@nestjs/config';
+import { UploadModule } from './modules/upload/upload.module';
 
 @Module({
-  imports: [TypeOrmModule.forRoot({
-    type: 'postgres',
-    host: 'localhost',
-    port: 5432,
-    username: 'postgres',
-    database: 'nestjs-auth-test',
-    password: 'postgres',
-    autoLoadEntities: true,
-    synchronize: true,
-    entities: ["dist/**/*.entity{.ts, .js}"],
-  }),
-    
+  imports: [
+    TypeormConfigModule,
+    ConfigModule.forRoot({
+      envFilePath: ['env/dev.env'],
+      isGlobal: true,
+    }),
     AuthModule,
     BlogsModule,
     ReadingListModule,
     CommentsModule,
-    WebscraperModule, 
-    
+    WebscraperModule,
+    ListModule,
+    UploadModule,
   ],
 })
 export class AppModule {}

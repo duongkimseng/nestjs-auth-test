@@ -1,5 +1,4 @@
-import { type } from "os";
-import { UserEntity } from "src/Modules/auth/user.entity";
+import { UserEntity } from "src/modules/auth/user.entity";
 import { BaseEntity, Column, Entity, PrimaryGeneratedColumn, ManyToOne, OneToMany, ManyToMany, JoinTable, CreateDateColumn, UpdateDateColumn } from "typeorm";
 import { ReadingListEntity } from "../reading-list/entities/reading-list.entity";
 

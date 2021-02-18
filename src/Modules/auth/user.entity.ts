@@ -1,10 +1,10 @@
 import { BaseEntity, BeforeInsert, Column, Entity, OneToMany, PrimaryGeneratedColumn, Unique } from "typeorm";
-import * as bcrypt from 'bcrypt'
-import { BlogEntity } from "src/Modules/blogs/blog.entity";
+import * as bcrypt from 'bcrypt';
+import { BlogEntity } from "src/modules/blogs/blog.entity";
 import { ReadingListEntity } from "../reading-list/entities/reading-list.entity";
 
 @Entity()
-@Unique(['username'])
+// @Unique(['username'])
 export class UserEntity extends BaseEntity{
     @PrimaryGeneratedColumn()
     id: number;
